@@ -1,26 +1,26 @@
 <header id="header">
   <div class="container-fluid header-container">
-    <h1><span>Vex</span>Outlet</h1>
-    <a href="#"><fa-icon [icon] = "faBell" class="bell-icon"></fa-icon></a>
+    <h1><a href="/"><span>Vex</span>Outlet</a></h1>
+    <a href="/notifications"><fa-icon [icon] = "faBell" class="bell-icon"></fa-icon></a>
   </div>
 </header>
 <nav>
   <ul>
       <li class="nav-item current">
           <fa-icon [icon] = "faHouse" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
-          <a href="#">Home</a>
+          <a href="/">Home</a>
       </li>
       <li class="nav-item">
           <fa-icon [icon] = "faList" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
-          <a href="./categories.html">Categories</a>
+          <a href="/categories">Categories</a>
       </li>
       <li class="nav-item">
         <fa-icon [icon] = "faHeart" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
-          <a href="#">Liked</a>
+          <a href="/favorite">Liked</a>
       </li>
       <li class="nav-item">
           <fa-icon [icon] = "faUser" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
-          <a href="#">Account</a>
+          <a href="/account">Account</a>
       </li>
   </ul>
 </nav>

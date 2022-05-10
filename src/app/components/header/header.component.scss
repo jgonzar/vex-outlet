@@ -11,10 +11,14 @@
       font-family: 'Montserrat', sans-serif;
       font-size:2.2rem;
       font-weight:500;
-      color:var(--white);
-      span{
-        color:var(--purple2);
+      a{
+        text-decoration:none;
+        color:var(--white);
+        span{
+          color:var(--purple2);
+        }
       }
+      
     }
     a{
       display:inline-block;

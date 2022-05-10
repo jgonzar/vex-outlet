@@ -1,0 +1,35 @@
+.hero-container{
+    min-width: 320px;
+    // margin-bottom:30px;
+    width:100%;
+  .picsum-img-wrapper img{
+    height: 134px;
+    width:100%;
+    // background-image: url("../../../assets/img/home-hero.jpg");
+    // background-size: cover;
+    // background-repeat:no-repeat;
+  }
+  .carousel-inner{
+      height: 114px;
+  }
+  .carousel-caption{
+      text-align: left;
+      padding:0 0 50px;
+      h5{
+        font-size:1.8rem;
+        font-weight:300;
+        letter-spacing:1.2px;
+      }
+      a{
+        text-decoration: none;
+        font-size:1rem;
+        color:var(--purple2);
+        transition:.4s;
+      }
+      a:hover{
+        text-decoration:none;
+        color:var(--fucsia);
+      }
+  }
+}
+
