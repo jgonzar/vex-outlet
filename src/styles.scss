@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&family=Work+Sans:wght@100;300;400;700&display=swap');
+
+:root {
+  /* colors */
+  --pink:#FA5591;
+  --fucsia:#DE4BCA;
+  --lila:#D75FF5;
+  --purple:#9A4BDE;
+  --purple2:#7E55FA;
+  --lightgrey: #acacac;
+  --lightergrey:#e5e5e5;
+  --deepergrey:#757575;
+  --white:#FFFFFF;
+  --black:#181818;
+}
+
+/* Globals */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: auto;
+  width: 100%;
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--black);
+  scroll-behavior: smooth;
+}
+
+p {
+  margin: 0;
+}
+
+// Scroll bar
+/* width */
+// ::-webkit-scrollbar {
+//   width: 5px;
+// }
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//   background: #757575;
+// }
+
+/* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: #e5e5e5;
+// }
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #DE4BCA;
+// }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
