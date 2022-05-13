@@ -15,8 +15,10 @@
           <a href="/categories">Categories</a>
       </li>
       <li class="nav-item">
-        <fa-icon [icon] = "faHeart" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
-          <a href="/favorite">Liked</a>
+        <fa-icon [icon] = "faMagnifyingGlass" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
+        <a class="" role="button" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Search
+        </a>
       </li>
       <li class="nav-item">
           <fa-icon [icon] = "faUser" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon>
@@ -24,5 +26,10 @@
       </li>
   </ul>
 </nav>
-
+<div class="collapse" id="collapseExample">
+  <form class="d-flex">
+    <input class="form-control me-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn search-btn" type="submit">Search <fa-icon [icon] = "faMagnifyingGlass" class="nav-icons" [class.active]="isActive"(click)="toggleActive()"></fa-icon></button>
+  </form>
+</div>
 <!-- sticky nav pending -->

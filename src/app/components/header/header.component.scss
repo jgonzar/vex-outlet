@@ -18,7 +18,7 @@
           color:var(--purple2);
         }
       }
-      
+
     }
     a{
       display:inline-block;
@@ -52,7 +52,6 @@ nav{
       align-items:center;
       a{
         text-decoration:none;
-        letter-spacing:0.12rem;
         color:var(--lightergrey);
       }
     }
@@ -71,5 +70,21 @@ nav{
     .active{
       color:var(--fucsia);
     }
+  }
+}
+#search-input{
+  margin:0 !important;
+  border-radius: 0;
+}
+.search-btn{
+  display:flex;
+  align-items: center;
+  border-radius:0;
+  padding:3% 4%;
+  color:var(--white);
+  background-color: var(--lila);
+  fa-icon{
+    display:flex;
+    margin-left:5px;
   }
 }

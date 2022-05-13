@@ -1,33 +1,13 @@
 <ngb-carousel class="hero-container">
-  <ng-template ngbSlide class="carousel-inner">
+  <ng-template *ngFor="let slide of slides" ngbSlide class="carousel-inner">
     <div class="picsum-img-wrapper">
-      <img src="../../../assets/img/home-hero.jpg" alt="Random first slide">
+      <img [src]="slide.img" alt="image">
     </div>
     <div class="carousel-caption">
-      <h5>Flash sale</h5>
-      <a href="/clothing">Learn more
+      <h5>{{slide.title}}</h5>
+      <a href="/clothing">{{slide.link}}
         <fa-icon [icon]="faChevronRight"></fa-icon></a>
     </div>
   </ng-template>
-  <ng-template ngbSlide class="carousel-inner">
-    <div class="picsum-img-wrapper">
-      <img src="../../../assets/img/home-hero2.jpg" alt="Random first slide">
-    </div>
-    <div class="carousel-caption">
-      <h5>Flash sale</h5>
-      <a href="/clothing">Learn more
-        <fa-icon [icon]="faChevronRight"></fa-icon></a>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide class="carousel-inner">
-    <div class="picsum-img-wrapper">
-      <img src="../../../assets/img/home-hero3.jpg" alt="Random first slide">
-    </div>
-    <div class="carousel-caption">
-      <h5>Flash sale</h5>
-      <a href="/clothing">Learn more
-        <fa-icon [icon]="faChevronRight"></fa-icon></a>
-    </div>
-  </ng-template>
-<!-- <ng-template ngbSlide> -->
+  
 

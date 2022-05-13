@@ -1,1 +1,13 @@
-<p>categories works!</p>
+<section class="categories-container container-fluid">
+  <div class="categories-title-container">
+    <h2>Categories</h2>
+    <a href="/categories">View all<fa-icon [icon]="faChevronRight" class="viewall-arrow"></fa-icon></a>
+  </div>
+  <div class="categories-preview-container">
+      <div *ngFor="let category of categories; index as i" class="categories-preview-item"[ngClass]="{'category-img1':i === 0, 'category-img2':i === 1, 'category-img3':i === 2}">
+          <div class="blue-overlay" >
+              <a href="/categories">{{category.name}}</a>
+          </div>
+      </div>
+    </div>
+</section>

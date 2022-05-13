@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import {faList} from '@fortawesome/free-solid-svg-icons';
-import {faHeart} from '@fortawesome/free-solid-svg-icons';
+// import {faHeart} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import {faBell} from '@fortawesome/free-solid-svg-icons';
 
@@ -26,7 +27,8 @@ export class HeaderComponent implements OnInit {
 
     faHouse = faHouse;
     faList = faList;
-    faHeart = faHeart;
+    // faHeart = faHeart;
+    faMagnifyingGlass = faMagnifyingGlass;
     faUser = faUser;
     faBell = faBell;
 
