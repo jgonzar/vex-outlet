@@ -10,6 +10,7 @@
   --purple2:#7E55FA;
   --lightgrey: #acacac;
   --lightergrey:#e5e5e5;
+  --phantomgrey:#464646;
   --deepergrey:#757575;
   --white:#FFFFFF;
   --black:#181818;
@@ -31,30 +32,31 @@ html, body {
   font-family: 'Work Sans', sans-serif !important;
   background-color: var(--black)!important;
   scroll-behavior: smooth;
+  z-index:0;
 }
 p {
   margin: 0;
 }
+// grid gap reset
+.g-0{
+  --bs-gutter-x:0 !important;
+}
 
-// Scroll bar
-/* width */
-// ::-webkit-scrollbar {
-//   width: 5px;
-// }
-
-/* Track */
-// ::-webkit-scrollbar-track {
-//   background: #757575;
-// }
-
-/* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: #e5e5e5;
-// }
-
-/* Handle on hover */
+// scrollbar
+::-webkit-scrollbar {
+  width: 5px;
+  transition:0.2s;
+}
+::-webkit-scrollbar-track {
+  background: var(--phantomgrey);
+}
+::-webkit-scrollbar-thumb {
+  border-radius:0;
+  background-image:linear-gradient(to bottom,var(--purple2), var(--fucsia), var(--pink));
+  transition:0.5s;
+}
 // ::-webkit-scrollbar-thumb:hover {
-//   background: #DE4BCA;
+//   // background: #DE4BCA;
 // }
 
 /* Importing Bootstrap SCSS file. */

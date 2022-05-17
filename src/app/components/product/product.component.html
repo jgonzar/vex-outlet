@@ -1,0 +1,21 @@
+<div class="product-card">
+  <img [src]="product.img" class="product-img">
+  <!-- this is temporary -->
+  <div class="rating-container">
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+    <fa-icon [icon]="faStar"></fa-icon>
+  </div>
+  <div class="product-info-container">
+    <a href="/" class="product-name">{{product.name}}</a>
+    <div class="product-price-container">
+      <p class="product-price">US${{product.price}}</p>
+      <p class="product-prevprice">${{product.prevprice}}</p>
+    </div>
+  </div>
+  <div class="favorite-container" >
+    <fa-icon [icon]="faHeart" (click)="toggleClass()" [class.active]="filled"></fa-icon>
+  </div>
+</div>

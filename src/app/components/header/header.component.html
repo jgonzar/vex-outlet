@@ -1,9 +1,65 @@
 <header id="header">
+  <!-- sidemenu -->
+  <div id="mySideMenu" class="sidemenu">
+    <div class="sidemenu-header">
+      <a href="/">
+        <img src="../../../assets/img/vexo-sidemenu-logo.svg" alt="Vex Outlet logo">
+      </a>
+      <h1>Welcome</h1>
+    </div>
+    <div class="sidemenu-close-icon">
+      <fa-icon [icon]="faXmark" (click)="closeSidemenu()"></fa-icon>
+    </div>
+    <ul  class="sidemenu-items">
+      <li>
+        <a href="/cart">Cart
+          <fa-icon [icon]="faShoppingCart"></fa-icon>
+        </a>
+      </li>
+      <li>
+        <a href="/liked">Liked
+          <fa-icon [icon]="faHeart"></fa-icon>
+        </a>
+      </li>
+      <li>
+        <div class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            Languages
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a class="dropdown-item" href="#">English
+                <img src="../../../assets/img/us-icon.png" alt="US">
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Spanish
+                <img src="../../../assets/img/es-icon.png" alt="ES">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="sidemenu-footer">
+      <div class="support-icon">
+        <a href="/support"><fa-icon [icon]="faCircleQuestion"></fa-icon></a>
+      </div>
+      <p>Copyright ⒸVexOutlet<br>
+        José Ángel González<br>
+        2022</p>
+    </div>
+  </div>
+  <!--  -->
   <div class="container-fluid header-container">
-    <h1><a href="/"><span>Vex</span>Outlet</a></h1>
-    <a href="/notifications"><fa-icon [icon] = "faBell" class="bell-icon"></fa-icon></a>
+      <button class="btn" (click)="openSidemenu()">
+        <img src="../../../assets/img/menu-icon.svg">
+      </button>
+    <a href="/"><img src="../../../assets/img/vexoutlet-logo.svg" alt="Vex Outlet logo"></a>
+    <a href="/notifications"><fa-icon [icon] = "faBell" class="bell-icon" ngbTooltip="You don't have any notifications" placement="start"></fa-icon></a>
   </div>
 </header>
+<!--Navigation -- NgFor pending, get rid of all that html -->
 <nav>
   <ul>
       <li class="nav-item current">

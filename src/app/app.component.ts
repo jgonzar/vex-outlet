@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'vex-outlet3.0';
+    title = 'VexOutlet';
+
 }
+
+

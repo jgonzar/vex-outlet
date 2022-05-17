@@ -1,0 +1,18 @@
+.featured-container .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm{
+  padding:0;
+  .featured-title-container{
+    padding:4% 3%;
+    h2{
+      font-size:1.8rem;
+      color:var(--white);
+    }
+  }
+  .pink-dot{
+    display:block;
+    height:10px;
+    width:10px;
+    margin:36px auto 120px;
+    border-radius:50%;
+    background-color: var(--pink);
+  }
+}
