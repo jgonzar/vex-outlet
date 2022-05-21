@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-categories',
@@ -8,31 +9,48 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+   }
 
   categories = [] = [
     {
       name:`All
      women`,
-    //  img:"../../../assets/img/all-category.jpg"
     },
     {
       name:`New
     Collection`,
-      // img:"../../../assets/img/new-collection-category.jpg"
     },
     {
       name:"Activewear",
-      // img:"../../../assets/img/active-category.jpg"
+    },{
+      name:"Luxury"
+    },
+    {
+      name:"Swimwear"
+    },
+    {
+      name:"Casual"
     }
-    // "Luxury",
-    // "Swimwear",
-    // "Casual"
   ];
+
+
+  mCategories = this.categories.slice(0, 3);
+  tCategories = this.categories.slice(0, 4);
+  dCategories = this.categories.slice(0, 6);
 
   faChevronRight = faChevronRight;
 
-  ngOnInit(): void {
-  }
+//   windowWidth:number = 0;
+//   width:number = window.innerWidth;
 
+//   @HostListener('window:resize', ['$event'])
+// onResize(event:any) {
+//    this.windowWidth = event.target.innerWidth;
+// }
+
+  ngOnInit(): void {
+    
+  }
 }

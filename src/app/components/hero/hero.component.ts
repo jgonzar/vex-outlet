@@ -14,9 +14,9 @@ export class HeroComponent implements OnInit {
 
   }
 
-  img1 : string = "../../../assets/img/home-hero.jpg";
-  img2 : string = "../../../assets/img/home-hero2.jpg";
-  img3 : string = "../../../assets/img/home-hero3.jpg";
+  img1 : string = "../../../assets/img/home-hero-a1.jpg";
+  img2 : string = "../../../assets/img/home-hero-a2.jpg";
+  img3 : string = "../../../assets/img/home-hero-a3.jpg";
 
   slides = [] = [
     {

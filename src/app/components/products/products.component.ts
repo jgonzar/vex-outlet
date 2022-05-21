@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -7,15 +8,6 @@ import { Product } from '../../models/product.model';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-
-  // productImg1 = ;
-  // productImg2 = ;
-  // productImg3 = ;
-  // productImg4 = "";
-  // productImg5 = "";
-  // productImg6 = "";
-  // productImg7 = "../../../assets/img/clothing7.jpg";
-  // productImg8 = ;
 
   products: Product[] = [
     {
@@ -92,18 +84,19 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  featuredProducts = [] = [
-    this.products[0],
-    this.products[1],
-    this.products[2],
-    this.products[3]
-  ];
+  featuredProducts = this.products.slice(0,4);
+  dfeaturedProducts = this.products.slice(0,6);
+
+
+  i:number=0
+
 
   constructor() {
 
    }
 
   ngOnInit(): void {
+
   }
 
 }

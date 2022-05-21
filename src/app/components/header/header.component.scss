@@ -93,6 +93,7 @@
     flex-direction:row;
     justify-content: space-between;
     align-items:center;
+    width:100%;
     .btn{
       display:flex;
       height:12px;
@@ -121,7 +122,6 @@
 
 
 nav{
-  display:block;
   height:auto;
   width:100%;
   padding:3% 4%;
@@ -137,8 +137,10 @@ nav{
       flex-direction:column;
       justify-content:center;
       align-items:center;
+      font-size:1.2rem;
       a{
         text-decoration:none;
+        font-size:1.2rem;
         color:var(--lightergrey);
       }
     }
@@ -147,8 +149,6 @@ nav{
     }
     .nav-icons{
       display:flex;
-      height:12px;
-      width:12px;
       margin:0;
       font-size:1.2rem;
       color:#a4a4a4;
@@ -174,5 +174,89 @@ nav{
   fa-icon{
     display:flex;
     margin-left:5px;
+  }
+}
+
+@media(min-width:48em){
+  #header{
+    .sidemenu{
+      .sidemenu-header{
+        a{
+          img{
+            height:14px;
+            width:20%;
+          }
+        }
+        h1{
+          font-size:3.4rem;
+        }
+      }
+      .sidemenu-items{
+        li{
+          a{
+            font-size:1.6rem;
+          }
+        }
+      }
+    }
+    .header-container{
+      min-height:40px;
+      padding:0 5%;
+      .btn{
+          height:16px;
+          width:16px;
+      }
+      a{
+        display:inline-block;
+        font-size:1.6rem;
+        .bell-icon{
+          display:block;
+          height:16px;
+          color:var(--white);
+        }:hover{
+          color:var(--lightergrey);
+        }
+      }
+    }
+  }
+  nav{
+    padding:1% 2%;
+  }
+  nav ul .nav-item{
+    a{
+      font-size:1.6rem;
+    }
+  }
+  nav ul .nav-icons{
+    font-size:1.6rem;
+  }
+  #search-input{
+    font-size: 1.2rem;
+  }
+  .search-btn{
+    padding:2%;
+    font-size:1.2rem;
+  }
+}
+
+@media (min-width:64em){
+  #header img{
+  height:22px;
+  }
+  nav{
+    padding:1% 2%;
+  }
+  nav ul .nav-item{
+    flex-direction: row;
+  }
+  nav ul .nav-icons{
+    margin-right:7px;
+  }
+  #search-input{
+    font-size: 1.4rem;
+  }
+  .search-btn{
+    padding:2%;
+    font-size:1.4rem;
   }
 }

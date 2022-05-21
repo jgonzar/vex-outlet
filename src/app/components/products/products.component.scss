@@ -2,3 +2,16 @@
   padding:0;
 }
 
+.products-container-d{
+  display:none;
+}
+
+@media (min-width:64em){
+  .products-container{
+    display:none;
+  }
+  .products-container-d{
+    display:block;
+    width:100%;
+  }
+}

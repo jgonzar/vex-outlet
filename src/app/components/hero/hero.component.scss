@@ -3,15 +3,16 @@
     // margin-bottom:30px;
     width:100%;
   .picsum-img-wrapper img{
-    height: 134px;
+    height:100%;
+    min-height:114px;
     width:100%;
     // background-image: url("../../../assets/img/home-hero.jpg");
     // background-size: cover;
     // background-repeat:no-repeat;
   }
-  .carousel-inner{
-      height: 114px;
-  }
+  // .carousel-inner{
+  //     height: 114px;
+  // }
   .carousel-caption{
       text-align: left;
       padding:0 0 50px;
@@ -30,6 +31,30 @@
         text-decoration:none;
         color:var(--fucsia);
       }
+  }
+}
+
+@media (min-width:48em){
+  .hero-container .carousel-caption{
+    padding:0 0 80px;
+    h5{
+      font-size:2.4rem;
+    }
+    a{
+      font-size:1.4rem;
+    }
+  }
+}
+
+@media (min-width:64em){
+  .hero-container .carousel-caption{
+    padding:0 0 140px;
+    h5{
+      font-size:2.8rem;
+    }
+    a{
+      font-size:1.8rem;
+    }
   }
 }
 

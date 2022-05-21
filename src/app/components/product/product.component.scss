@@ -1,5 +1,6 @@
 .product-card{
   display:flex;
+  position:relative;
   flex-direction: column;
   justify-content: left;
   height:auto;
@@ -8,6 +9,25 @@
     height:180px;
     width:100%;
     margin:0;
+  }
+  .discount-container{
+    display:flex;
+    position:absolute;
+    top:40px;
+    height: auto;
+    width:30%;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    border-radius:0 25px 25px 0;
+    padding:3% 5%;
+    background-image: linear-gradient(to right,var(--pink),var(--fucsia),var(--purple2));
+    p{
+      font-size:1.4rem;
+      font-weight:500;
+      color:var(--white);
+      margin:0;
+    }
   }
   .rating-container{
     padding:3% 2%;
@@ -75,3 +95,11 @@
 }
 
 
+@media (min-width:64em){
+  .product-card .product-info-container .product-name{
+    font-size:1.6rem;
+  }
+  .product-card .favorite-container{
+    bottom:150px
+  }
+}
