@@ -12,13 +12,23 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 export class ProductComponent implements OnInit {
 
   @Input () product: Product = {
-    id:0,
-    img:"",
-    name:"",
-    price:0,
-    prevprice:0,
-    discount:0,
-    category:""
+      id:0,
+      imgs:[''],
+      img:'',
+      title:'',
+      price:0,
+      colors:[],
+      color:'',
+      sizes:[],
+      size:'',
+      inStock:true,
+      stock:0,
+      categories:[''],
+      description:'',
+      details:``,
+      hasDiscount:false,
+      discount:0,
+      rating:0
   };
 
   @Output () addedProduct = new EventEmitter<Product>();

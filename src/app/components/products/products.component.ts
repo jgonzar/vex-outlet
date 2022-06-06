@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
 // products
   products: Product[] = [];
   // home featured
-  featuredProducts = this.products.slice(0,4);
+  featuredProducts = [] as any;
   dfeaturedProducts = this.products.slice(0,6);
 
   constructor(
@@ -29,7 +29,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProducts()
     .subscribe(data =>{
-      console.log(data);
+      this.products = data;
+      this.featuredProducts = this.products.slice(0,4)
     })
   }
   onAddedShoppingCart(product:Product){

@@ -12,6 +12,6 @@ export class ProductsService {
   ) { }
 
     getAllProducts(){
-      return this.http.get('https://jgonzar.github.io/data/products.json');
+      return this.http.get<Product[]>('https://jgonzar.github.io/data/products.json');
     }
 }
