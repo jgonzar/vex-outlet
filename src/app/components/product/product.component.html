@@ -1,7 +1,7 @@
 <div class="product-card">
-  <div class="discount-container">
+  <!-- <div class="discount-container">
     <p>-{{product.discount}}%</p>
-  </div>
+  </div> -->
   <img [src]="product.img" class="product-img">
   <!-- this is temporary -->
   <div class="rating-container">
@@ -15,9 +15,10 @@
     <a href="/" class="product-name">{{product.name}}</a>
     <div class="product-price-container">
       <p class="product-price">US${{product.price}}</p>
-      <p class="product-prevprice">${{product.prevprice}}</p>
+      <!-- <p class="product-prevprice">${{product.prevprice}}</p> -->
     </div>
   </div>
+  <button (click)="addToCart()">Add to cart</button>
   <div class="favorite-container" >
     <fa-icon [icon]="faHeart" (click)="toggleClass()" [class.active]="filled"></fa-icon>
   </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Product } from "../../models/product.model";
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -21,15 +21,18 @@ export class ProductComponent implements OnInit {
     category:""
   };
 
+  @Output () addedProduct = new EventEmitter<Product>();
   faStar = faStar;
   faHeart = faHeart;
 
   filled:boolean = false;
-
+  // favorite icons
   toggleClass() {
     this.filled = !this.filled;
     console.log("i got clicked");
   }
+
+
 
   constructor() {
 
@@ -38,4 +41,8 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // add to cart
+  addToCart(){
+    this.addedProduct.emit(this.product)
+  }
 }
