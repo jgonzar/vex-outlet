@@ -1,4 +1,5 @@
 .categories-container{
+  max-width: 1200px;
   width:100%;
   padding:0;
   // min-width:320px;
@@ -117,6 +118,9 @@
   }
 }
 @media (min-width:64em){
+  .categories-container{
+    margin:0 auto;
+  }
   .categories-container .categories-title-container h2{
     font-size:2.6rem;
   }

@@ -15,5 +15,5 @@ export interface Product{
   details:string,
   hasDiscount:boolean,
   discount:number,
-  rating:number
+  rating:number[]
 };

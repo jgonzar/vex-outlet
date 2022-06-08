@@ -162,10 +162,12 @@ nav{
   }
 }
 #search-input{
+  max-height: 40px;
   margin:0 !important;
   border-radius: 0;
 }
 .search-btn{
+  max-height: 40px;
   display:flex;
   align-items: center;
   border-radius:0;
@@ -256,7 +258,7 @@ nav{
     font-size: 1.4rem;
   }
   .search-btn{
-    padding:2%;
+    padding:1%;
     font-size:1.4rem;
   }
 }

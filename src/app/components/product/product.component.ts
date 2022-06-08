@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Product } from "../../models/product.model";
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-product',
@@ -28,12 +29,17 @@ export class ProductComponent implements OnInit {
       details:``,
       hasDiscount:false,
       discount:0,
-      rating:0
+      rating:[]
   };
 
   @Output () addedProduct = new EventEmitter<Product>();
-  faStar = faStar;
   faHeart = faHeart;
+  faShoppingCart = faShoppingCart;
+  faStar = faStar;
+
+  actualPrice:number = 0;
+
+  averageRating: any = 0;
 
   filled:boolean = false;
   // favorite icons
@@ -42,13 +48,20 @@ export class ProductComponent implements OnInit {
     console.log("i got clicked");
   }
 
-
+  hasDiscount(){
+    if(this.product.hasDiscount === true){
+        this.actualPrice = ((this.product.price * this.product.discount)/100);
+    }else{
+      this.actualPrice = this.product.price;
+    }
+  }
 
   constructor() {
 
   }
 
   ngOnInit(): void {
+    this.hasDiscount();
   }
 
   // add to cart

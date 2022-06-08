@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
   // home featured
   featuredProducts = [] as any;
-  dfeaturedProducts = this.products.slice(0,6);
+  dfeaturedProducts = [] as any;
 
   constructor(
     private storeService: StoreService,
@@ -30,7 +30,8 @@ export class ProductsComponent implements OnInit {
     this.productsService.getAllProducts()
     .subscribe(data =>{
       this.products = data;
-      this.featuredProducts = this.products.slice(0,4)
+      this.featuredProducts = this.products.slice(0,4);
+      this.dfeaturedProducts = this.products.slice(0,6);
     })
   }
   onAddedShoppingCart(product:Product){

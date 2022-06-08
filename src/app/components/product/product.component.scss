@@ -1,4 +1,5 @@
 .product-card{
+  min-height:355px;
   display:flex;
   position:relative;
   flex-direction: column;
@@ -32,23 +33,33 @@
   .rating-container{
     padding:3% 2%;
     font-size:0.8rem;
-    color:var(--fucsia);
-    fa-icon{
-      cursor:pointer;
+    //   cursor:pointer;
+    // }
+    a{
+      text-decoration:none;
+      font-size: 1.4rem;
+      color:var(--pink);
+    }
+    .noRating{
+      color:var(--phantomgrey);
+      font-size: 1rem;
     }
   }
   .product-info-container{
     display:flex;
+    min-height:8.6rem;
     flex-direction: column;
     padding:3% 2%;
     .product-name{
+      min-height: 3.6rem;
       text-decoration: none;
       font-size:1.2rem;
-      color:var(--phantomgrey);
+      color:var(--lightgrey);
+      opacity:0.8;
       transition:0.15s;
     }
     .product-name:hover{
-      color:var(--lightgrey);
+      opacity:1;
     }
     .product-price-container{
       display:flex;
@@ -58,7 +69,7 @@
       margin-top:10px;
       .product-price{
         display:flex;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color:var(--lila);
       }
       .product-prevprice{
@@ -74,7 +85,7 @@
     display:flex;
     position:relative;
     right:calc(-65% - 10px);
-    bottom:145px;
+    bottom:155px;
     justify-content:center;
     align-items: center;
     height:34px;
@@ -92,14 +103,42 @@
       color:var(--pink);
     }
   }
+  button{
+    border:0;
+    border-radius: 25px;
+    margin:0 14px;
+    padding:3% 4%;
+    font-size: 1.4rem;
+    font-weight:300;
+    color:var(--white);
+    background-color:var(--purple);
+    opacity:0.8;
+    transition: 0.3s;
+  }:hover{
+    opacity:1;
+  }
 }
 
-
+@media (min-width:48em){
+  .product-card .favorite-container{
+    right:calc(-75% - 10px);
+    bottom:170px;
+  }
+}
 @media (min-width:64em){
   .product-card .product-info-container .product-name{
     font-size:1.6rem;
   }
-  .product-card .favorite-container{
-    bottom:150px
+  .product-card .product-info-container .product-name{
+    min-height:72px;
   }
+  .product-card .product-info-container .product-price-container .product-price{
+    font-size: 2rem;
+  }
+  .product-card .favorite-container{
+    right:calc(-75% - 10px);
+    bottom: 215px;;
+  }
+
 }
+

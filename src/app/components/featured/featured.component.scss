@@ -1,4 +1,5 @@
 .featured-container .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm{
+  max-width: 1200px;
   padding:0;
   .featured-title-container{
     padding:3% 4%;
@@ -24,6 +25,9 @@
 }
 
 @media (min-width:64em){
+.featured-container .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm{
+  margin: 0 auto;
+}
   .featured-container .featured-title-container h2{
     font-size:2.6rem;
   }
