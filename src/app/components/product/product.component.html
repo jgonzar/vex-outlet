@@ -1,9 +1,11 @@
 <div class="product-card">
-  <div class="discount-container">
+
+  <div id="discount" class="discount-container"[class.show]="product.hasDiscount === true">
     <p>-{{product.discount}}%</p>
   </div>
+
   <img [src]="product.imgs[0]" class="product-img">
-  <!-- this is temporary -->
+
   <div [ngSwitch]="product.rating" class="rating-container">
     <a *ngSwitchCase="5" href="#5" title="5 stars">★★★★★</a>
     <a *ngSwitchCase="4" href="#4" title="4 stars">★★★★</a>
@@ -11,19 +13,25 @@
     <a *ngSwitchCase="2" href="#2" title="2 stars">★★</a>
     <a *ngSwitchCase="1" href="#1" title="1 star">★</a>
     <a *ngSwitchDefault href="#" class="noRating"> No rating avaible</a>
-      <!-- <fa-icon [icon]="faStar" class="rating__icon rating__icon--star"></fa-icon> -->
   </div>
+
   <div class="product-info-container">
     <a href="/" class="product-name">{{product.title}}</a>
     <div class="product-price-container">
-      <p class="product-price">US${{actualPrice}}</p>
-      <p class="product-prevprice">${{product.price}}</p>
+      <p class="product-price">{{actualPrice | currency:"USD"}}</p>
+      <p class="product-prevprice"[class.showPrv]="product.hasDiscount === true">${{product.price}}</p>
     </div>
   </div>
-  <button (click)="addToCart()">
+
+  <button class="details-btn"(click)="onShowDetail()">
+    See details
+  </button>
+
+  <button class="cart-btn" (click)="addToCart()">
     Add to cart
     <fa-icon [icon]="faShoppingCart"></fa-icon>
   </button>
+  
   <div class="favorite-container" >
     <fa-icon [icon]="faHeart" (click)="toggleClass()" [class.active]="filled"></fa-icon>
   </div>

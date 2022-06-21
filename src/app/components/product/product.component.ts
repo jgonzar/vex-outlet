@@ -33,6 +33,10 @@ export class ProductComponent implements OnInit {
   };
 
   @Output () addedProduct = new EventEmitter<Product>();
+  @Output () showProduct = new EventEmitter<number>();
+
+
+
   faHeart = faHeart;
   faShoppingCart = faShoppingCart;
   faStar = faStar;
@@ -42,10 +46,10 @@ export class ProductComponent implements OnInit {
   averageRating: any = 0;
 
   filled:boolean = false;
+
   // favorite icons
   toggleClass() {
     this.filled = !this.filled;
-    console.log("i got clicked");
   }
 
   hasDiscount(){
@@ -56,9 +60,7 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
     this.hasDiscount();
@@ -67,5 +69,12 @@ export class ProductComponent implements OnInit {
   // add to cart
   addToCart(){
     this.addedProduct.emit(this.product)
+  }
+
+  onShowDetail(){
+    this.showProduct.emit(this.product.id);
+    const productDetail = document.getElementById("product-detail");
+    productDetail!.style.width ="80%";
+    productDetail!.classList.add("dark-overlay");
   }
 }

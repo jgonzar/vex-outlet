@@ -15,7 +15,10 @@ import { ProductsComponent } from './components/products/products.component';
 import { FeaturedComponent } from './components/featured/featured.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BackToTopBtnComponent } from './components/back-to-top-btn/back-to-top-btn.component';
+import { SwiperModule } from 'swiper/angular';
+import SwiperCore, { Pagination } from "swiper";
 
+SwiperCore.use([Pagination]);
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,8 @@ import { BackToTopBtnComponent } from './components/back-to-top-btn/back-to-top-
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

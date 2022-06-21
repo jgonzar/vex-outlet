@@ -1,11 +1,88 @@
 <div class="products-container container-fluid">
   <div class="row g-0" >
-    <app-product [product]="product" *ngFor="let product of featuredProducts; index as i" class="col-6 col-md-3 col-lg-2" (addedProduct)="onAddedShoppingCart($event)"></app-product>
+    <app-product [product]="product" *ngFor="let product of featuredProducts; index as i" class="col-6 col-md-3 col-lg-2" (addedProduct)="onAddedShoppingCart($event)" (showProduct)="onShowDetail($event)"></app-product>
   </div>
 </div>
 
 <div class="products-container-d container-fluid">
   <div class="row g-0" >
-    <app-product [product]="product" *ngFor="let product of dfeaturedProducts; index as i" class="col-6 col-md-3 col-lg-2" (addedProduct)="onAddedShoppingCart($event)"></app-product>
+    <app-product [product]="product" *ngFor="let product of dfeaturedProducts; index as i" class="col-6 col-md-3 col-lg-2" (addedProduct)="onAddedShoppingCart($event)" (showProduct)="onShowDetail($event)"></app-product>
   </div>
 </div>
+
+<div class="cart-preview-container"[class.display] = "myShoppingCart.length > 0">
+  <div class="cart-l-side">
+    <fa-icon [icon] = faShoppingCart></fa-icon>
+    <p class="cart-items">{{myShoppingCart.length}} items</p>
+  </div>
+  <div class="cart-r-side">
+    <span>Total:</span>
+    <p class="cart-total">{{total | currency:"USD"}}</p>
+  </div>
+</div>
+<!-- <div *ngIf="detailStatus === 'loading' ; else elseBlock" id="product-detail" class="product-detail">
+  <div class="product-detail-close">
+    <fa-icon [icon]="faXmark" (click)="closeDetail()"></fa-icon>
+  </div>
+  <div class="loader">
+
+  </div>
+</div> -->
+
+
+<!-- product detail -->
+<div  id="product-detail" class="product-detail">
+  <div class="product-detail-close">
+    <fa-icon [icon]="faXmark" (click)="closeDetail()"></fa-icon>
+  </div>
+  <swiper class="detail-img-container" ngbTooltip="Swipe left!" placement="bottom"
+  [openDelay]="300" [closeDelay]="500">
+    <ng-template swiperSlide *ngFor="let img of selectedProduct.imgs">
+      <img [src]="img">
+    </ng-template>
+  </swiper>
+
+  <div class="detail-info-container">
+    <div class="rating-stock-container">
+      <div [ngSwitch]="selectedProduct.rating" class="rating-container">
+        <a *ngSwitchCase="5" href="#5" title="5 stars">★★★★★</a>
+        <a *ngSwitchCase="4" href="#4" title="4 stars">★★★★</a>
+        <a *ngSwitchCase="3" href="#3" title="3 stars">★★★</a>
+        <a *ngSwitchCase="2" href="#2" title="2 stars">★★</a>
+        <a *ngSwitchCase="1" href="#1" title="1 star">★</a>
+        <a *ngSwitchDefault href="#" class="noRating">No rating avaible</a>
+      </div>
+      <p *ngIf="'selectedProduct.inStock === true' ; else outOfStock" class="stock">In Stock</p>
+      <ng-template #outOfStock>
+        <p>Out Of Stock</p>
+      </ng-template>
+    </div>
+    <h3 class="item-title">{{selectedProduct.title}}</h3>
+    <div class="item-price-container">
+      <p class="item-price">{{actualPrice | currency:"USD"}}</p>
+      <p class="item-prevprice"[class.showPrv]="selectedProduct.hasDiscount === true">${{selectedProduct.price}}</p>
+    </div>
+    <div class="btns-container">
+      <button class="cart-btn" (click)="addDetailedProduct()">
+        Add to cart
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+      </button>
+      <div class="favorite-container" >
+        <fa-icon [icon]="faHeart" (click)="toggleClass()" [class.active]="filled"></fa-icon>
+      </div>
+    </div>
+    <div class="detail-text-container">
+      <!-- <div class="item-description">
+        <h3>Description</h3>
+        <p>{{selectedProduct.description}}</p>
+      </div> -->
+      <div class="item-details">
+        <p>{{selectedProduct.details}}</p>
+      </div>
+    </div>
+    <!-- <div class="related-products">
+    </div> -->
+  </div>
+</div>
+
+
