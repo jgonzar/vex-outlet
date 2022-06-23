@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Product } from '../models/product.model';
 import { retry } from 'rxjs/operators';
 
@@ -16,6 +16,12 @@ export class ProductsService {
   ) { }
 
     getAllProducts(){
-      return this.http.get<Product[]>(this.apiUrl).pipe(retry(3));;
+      return this.http.get<Product[]>(this.apiUrl).pipe(retry(3));
+    }
+
+    getProductsByPage(limit:number, offset:number){
+      return this.http.get<Product[]>(this.apiUrl, {
+        params:{limit, offset}
+      }).pipe(retry(3));;
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { StoreService } from '../../services/store.service';
 import { ProductsService } from '../../services/products.service';
@@ -6,25 +6,25 @@ import {faXmark} from '@fortawesome/free-solid-svg-icons';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-
-
 // import { subscribeOn } from 'rxjs';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent{
 
+  // icons
   faXmark = faXmark;
   faHeart = faHeart;
   faShoppingCart = faShoppingCart;
 
   // products
-  products: Product[] = [];
+  @Input () products: Product[] = [];
+
   // home featured
-  featuredProducts:Product[] = [];
-  dfeaturedProducts:Product[] = [];
+  @Input () featuredProducts:Product[] = [];
+  @Input () dfeaturedProducts:Product[] = [];
 
   // product data from product component
   @Input () product: Product = {
@@ -47,8 +47,6 @@ export class ProductsComponent implements OnInit {
     rating:[]
 };
 
-  actualPrice:number = 0;
-
   averageRating: any = 0;
 
   filled:boolean = false;
@@ -59,13 +57,6 @@ export class ProductsComponent implements OnInit {
     console.log("i got clicked");
   }
 
-
-  //
-  // detail
-  // shopping cart
-  myShoppingCart:Product[] = [];
-  total: any = 0;
-
   closeDetail(){
     const productDetail = document.getElementById("product-detail");
     productDetail!.style.width = "0";
@@ -73,6 +64,8 @@ export class ProductsComponent implements OnInit {
   }
 
   selectedProduct = {} as any;
+
+  actualPrice:number = 0;
 
   hasDiscount(){
     if(this.selectedProduct.hasDiscount === true){
@@ -83,6 +76,8 @@ export class ProductsComponent implements OnInit {
   }
 
   detailStatus: 'loading' | 'success' | 'error' | 'init' = 'init';
+
+  @Output () showProduct = new EventEmitter<number>();
 
   onShowDetail(id:number){
     this.detailStatus = 'loading';
@@ -95,13 +90,15 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+  // shopping cart
+  myShoppingCart:Product[] = [];
+  total: any = 0;
+
   onAddedShoppingCart(product:Product){
     this.storeService.addProduct(product);
     this.total = this.storeService.getTotal();
     console.log(this.total);
   }
-
-  // add to cart
 
   @Output () addedProduct = new EventEmitter<Product>();
 
@@ -109,9 +106,7 @@ export class ProductsComponent implements OnInit {
     this.myShoppingCart.push(this.selectedProduct);
     this.total = this.storeService.getDetailedTotal();
   }
-
-  @Output () showProduct = new EventEmitter<number>();
-
+//
 
   constructor(
     private storeService: StoreService,
@@ -120,13 +115,30 @@ export class ProductsComponent implements OnInit {
     this.myShoppingCart = this.storeService.getShoppingCart();
    }
 
-  ngOnInit(): void {
-    // data request
-    this.productsService.getAllProducts()
-    .subscribe(data =>{
-      this.products = data;
-      this.featuredProducts = this.products.slice(0,4);
-      this.dfeaturedProducts = this.products.slice(0,6);
-    })
+  limit = 0;
+  offset = 0;
+
+  @Output () loadMore = new EventEmitter();
+
+  onLoadMore(){
+    this.loadMore.emit();
+  //  this.productsService.getProductsByPage(this.limit, this.offset)
+  //  .subscribe(data =>{
+  //     this.products = this.products.concat(data);
+  //     this.offset += (this.limit - 2);
+  //   })
   }
+
+  ngOnInit():void {
+
+  }
+  // ngOnInit(): void {
+  //   // data request
+  //   this.productsService.getAllProducts()
+  //   .subscribe(data =>{
+  //     this.products = data;
+  //     this.featuredProducts = this.products.slice(0,4);
+  //     this.dfeaturedProducts = this.products.slice(0,6);
+  //   })
+  // }
 }

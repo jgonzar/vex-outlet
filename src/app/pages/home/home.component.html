@@ -1,0 +1,14 @@
+<app-hero></app-hero>
+<app-categories></app-categories>
+<section class="featured-container container-fluid">
+  <div class="featured-title-container">
+    <h2>Featured</h2>
+  </div>
+  <app-products [featuredProducts]="featuredProducts" (loadMore) = "onLoadMore()" ></app-products>
+  
+  <button (click)="onLoadMore()" [class.onLimit]="featuredProducts.length === 6">Load More</button>
+
+  <div class="pink-dot">
+
+  </div>
+</section>
